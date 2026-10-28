@@ -18,9 +18,12 @@ body {
   background-color: #fdf6ec;
   color: #3b2a1a;
   font-family: Arial, sans-serif;
-  max-width: 1000px;   /* stops the page getting too wide on big screens */
-  margin: 0 auto;      /* centers the page */
-  padding: 0 16px;     /* a little space at the edges on phones */
+  max-width: 1000px;
+  /* stops the page getting too wide on big screens */
+  margin: 0 auto;
+  /* centers the page */
+  padding: 0 16px;
+  /* a little space at the edges on phones */
 }
 
 h1,
@@ -59,9 +62,9 @@ p {
 */
 
 .card-grid {
-  /* TODO: display (turn on grid) */
-  /* TODO: grid-template-columns (four equal columns) */
-  /* TODO: gap (space between the cards, like 16px) */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 
 
@@ -87,8 +90,8 @@ nav ul {
 */
 
 img {
-  /* TODO: max-width: 100%; */
-  /* TODO: height: auto;    (keeps the photo's shape) */
+  max-width: 100%;
+  height: auto;
 }
 
 /*
@@ -118,8 +121,26 @@ img {
 /* TODO: Tablet. Write a media query for (min-width: 768px).
          Inside it:   body        -> background-color: #e3eefa;
                       .card-grid  -> 2 equal columns            */
+@media (min-width: 768px) {
+  body {
+    background-color: #e3eefa;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
 
 /* TODO: Desktop. Write a media query for (min-width: 1200px).
          Inside it:   body        -> background-color: #e6f2e1;
                       .card-grid  -> 4 equal columns            */
+@media (min-width: 1200px) {
+  body {
+    background-color: #e6f2e1;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
