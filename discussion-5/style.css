@@ -1,0 +1,180 @@
+/* ============================================================
+   DEV.140 — Discussion 5: Can Everyone Use Your Page? (Starter)
+   ============================================================
+   This page looks fine to most of us. WAVE will show us who
+   it's NOT fine for. Today we find 4 problems, then fix them.
+
+   HOW TO RUN WAVE ON THIS PAGE
+     1. Open index.html with Go Live (Live Server) in VS Code.
+     2. Click the WAVE extension icon in your browser toolbar.
+        (Install it from wave.webaim.org/extension. It's free.)
+     3. The sidebar shows a Summary. Click "Details" to see
+        every issue. Click an icon to jump to that spot.
+
+     Already published on GitHub Pages? You can also paste your
+     page's URL into wave.webaim.org instead.
+
+   WHAT THE WAVE ICONS MEAN
+     RED     Errors           Almost certainly a real problem. Fix these.
+     RED     Contrast Errors  Text is too faint to read easily.
+     YELLOW  Alerts           Probably a problem. A human has to check.
+     GREEN   Features         Good things! (like alt text, labels)
+     BLUE    Structure        Headings, lists, landmarks. Not errors.
+
+   The plan:
+     CODE-ALONG 1 (index.html): FIX 1 and FIX 2  (see the list just below)
+     CODE-ALONG 2 (this file):  FIX 3 and FIX 4  (further down)
+   Save, then click the WAVE icon again after EVERY fix.
+   The number should go down each time.
+   ============================================================ */
+
+
+/* ============================================================
+   CODE-ALONG 1: THE HTML PROBLEMS (fix these in index.html)
+   ============================================================
+   CSS can't fix these. They are missing INFORMATION in the HTML.
+   Use WAVE's Details list to find each one, then fix it there.
+
+   [ ] FIX 1  RED "Missing alternative text"
+              -> the loaf <img> needs an alt="..." that describes it.
+              Why it matters: a screen reader user hears only "image"
+              (or the file name) and has no idea what the picture shows.
+
+   [ ] FIX 2  RED "Language missing or invalid"
+              -> <html> needs lang="en"
+              Why it matters: screen readers use it to pick the right
+              voice and pronunciation for the page.
+   ============================================================ */
+
+
+/* ---------- ALREADY DONE (from Discussions 3 and 4) ---------- */
+
+body {
+  background-color: #fdf6ec;
+  color: #3b2a1a;
+  font-family: Arial, sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+h1,
+h2 {
+  color: #8b5a2b;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 2px solid #8b5a2b;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.join-button {
+  background-color: #8b5a2b;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+footer {
+  color: #6b5440;
+  border-top: 1px solid #e6d8c3;
+  margin-top: 32px;
+  padding: 16px 0;
+}
+
+.top-link {
+  color: #8b5a2b;
+}
+
+
+/* ============================================================
+   CODE-ALONG 2: THE CSS PROBLEMS (fix these here)
+   ============================================================ */
+
+
+/* ---------- FIX 3: LOW CONTRAST ----------
+   WAVE says:  RED "Very low contrast" (1 Contrast Error, on the tagline)
+
+   Why it matters:
+     Faint text is hard to read for people with low vision, older
+     eyes, colorblindness, or anyone on a phone in bright sunlight.
+
+   The rule (WCAG): normal text needs a contrast ratio of at
+   least 4.5 : 1 against its background. This one is about 2 : 1.
+
+   How to check a color:
+     In WAVE, click the "Contrast" tab, then click the red contrast
+     icon. WAVE shows the ratio and lets you try darker colors.
+     Or use webaim.org/resources/contrastchecker
+
+   Hint: look at the footer rule above. Its color already passes.
+*/
+
+.tagline {
+  color: #c4b19a;
+  /* TODO: pick a darker color (4.5 : 1 or higher) */
+  font-style: italic;
+}
+
+
+/* ---------- FIX 4: VERY SMALL TEXT ----------
+   WAVE says:  YELLOW "Very small text" (the line under the Join button)
+
+   Why it matters:
+     9px is tiny. Many people can't read it at all without zooming,
+     and fine print is often the stuff people NEED to read.
+     Keep body text at 1rem (16px) or close to it.
+*/
+
+.fine-print {
+  font-size: 9px;
+  /* TODO: make this at least 14px */
+}
+
+
+/* ============================================================
+   GOAL: WAVE shows 0 Errors, 0 Contrast Errors, and 0 Alerts.
+   ============================================================ */
